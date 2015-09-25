@@ -175,7 +175,7 @@ module VagrantPlugins
                     raise Errors::FogError, :message => e.message
                 end
             end
-        end
+          end
 
           if !env[:interrupted]
             env[:metrics]["instance_ssh_time"] = Util::Timer.time do
