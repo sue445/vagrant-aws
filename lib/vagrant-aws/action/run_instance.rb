@@ -277,7 +277,9 @@ module VagrantPlugins
           end
           # cancel the spot request but let the server go thru
           env[:aws_compute].cancel_spot_instance_requests(spot_request_id)
-          env[:aws_compute].servers.get(spot_req["instanceId"])
+          server = env[:aws_compute].servers.get(spot_req["instanceId"])
+          env[:aws_compute].create_tags(server.identity, config.tags)
+          server
         end
 
         def recover(env)
