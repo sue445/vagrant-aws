@@ -223,6 +223,8 @@ module VagrantPlugins
             'LaunchSpecification.Placement.AvailabilityZone' => config.availability_zone,
             'LaunchSpecification.UserData'                   => config.user_data,
             'LaunchSpecification.SubnetId'                   => config.subnet_id,
+            'LaunchSpecification.IamInstanceProfile.Arn'     => config.iam_instance_profile_arn,
+            'LaunchSpecification.IamInstanceProfile.Name'    => config.iam_instance_profile_name,
             'ValidUntil'                                     => config.spot_valid_until
           }
           security_group_key = config.subnet_id.nil? ? 'LaunchSpecification.SecurityGroup' : 'LaunchSpecification.SecurityGroupId'
